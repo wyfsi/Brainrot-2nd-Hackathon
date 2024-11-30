@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap" rel="stylesheet">
+    <title>DIVRENT</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;  /* Dark background */
+            color: #00FF00;  /* Green text */
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: #00FF00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #00cc00;
+        }
+
+        /* Header Styling */
+        header {
+            height: 100vh;
+            padding: 50px;
+            text-align: center;
+            background-color: #1b1b1b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            perspective: 500px;
+        }
+
+        .title h1 {
+            font-size: 6em;
+            font-weight: 100;
+            letter-spacing: 0.1em;
+            margin: 20px 0;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px #555;
+        }
+
+        .title p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        .scroll-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Info Section */
+        section#info {
+            padding: 40px;
+            background-color: #222222;
+            height: auto;
+            overflow-y: hidden;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .method {
+            margin: 40px 0;
+        }
+
+        .box {
+            background-color: #333;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px solid #00FF00;
+        }
+
+        /* Flexbox */
+        .flexbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: 50%;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            place-items: stretch;
+        }
+
+        /* Absolute Positioning */
+        .absolute {
+            position: relative;
+        }
+
+        .absolute p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Margin Auto */
+        .margin-auto {
+            width: 50%;
+            margin: auto;
+        }
+
+        /* Table */
+        .table {
+            display: table;
+            width: 100%;
+            height: 200px;
+        }
+
+        .table p {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top section with the title -->
+    <header>
+        <div class="title">
+            <h1>DIVRENT</h1>
+            <p>How to Center Divs Without Using the Word "Center"</p>
+            <button class="scroll-button" onclick="slowScrollToInfo()">Scroll to Info</button>
+        </div>
+    </header>
+
+    <!-- Scrollable info section -->
+    <section id="info">
+        <!-- Method 1: Flexbox -->
+        <div class="method">
+            <h3>1. Flexbox</h3>
+            <p>Using flexbox to align items along the main and cross axes.</p>
+            <p>Cheated with the power of 50%</p>
+            <div class="box flexbox">
+                <p>Flexbox Centered</p>
+            </div>
+            <pre>
+/* Flexbox */
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: 50%;
+}
+            </pre>
+        </div>
+        
+        <!-- Method 2: Grid -->
+        <div class="method">
+            <h3>2. Grid</h3>
+            <p>Using CSS Grid to position elements.</p>
+            <p>Grid + Stretch = Center somehow (?)</p>
+            <div class="box grid">
+                <p>Grid Centered</p>
+            </div>
+            <pre>
+/* Grid */
+.grid {
+    display: grid;
+    place-items: stretch;
+}
+            </pre>
+        </div>
+        
+        <!-- Method 3: Absolute Positioning with Transform -->
+        <div class="method">
+            <h3>3. Absolute Positioning</h3>
+            <p>Positioning an element using absolute positioning and transform to align it.</p>
+            <p>The allmighty 50% top, left, transform/translate</p>
+            <div class="box absolute">
+                <p>Absolute Centered</p>
+            </div>
+            <pre>
+/* Absolute Positioning */
+.absolute {
+    position: relative;
+}
+
+.absolute p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+            </pre>
+        </div>
+        
+        <!-- Method 4: Margin Auto -->
+        <div class="method">
+            <h3>4. Margin Auto</h3>
+            <p>Using margin auto for horizontally centering a block element with a fixed width.</p>
+            <div class="box margin-auto">
+                <p>Margin Auto Centered</p>
+            </div>
+            <pre>
+/* Margin Auto */
+.margin-auto {
+    width: 50%;
+    margin: auto;
+}
+            </pre>
+        </div>
+        
+        <!-- Method 5: CSS Table -->
+        <div class="method">
+            <h3>5. CSS Table</h3>
+            <p>Using CSS table display to center elements in the middle.</p>
+            <p>Manual pixel centering :D</p>
+            <div class="box table">
+                <p>Table Cell Centered</p>
+            </div>
+            <pre>
+/* CSS Table */
+.table {
+    display: table;
+    width: 100%;
+    height: 200px;
+}
+
+.table p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: 50%;
+}
+            </pre>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            const title = document.querySelector('.title');
+            const { clientX, clientY } = event;
+            const { innerWidth, innerHeight } = window;
+            
+            const rotateX = ((clientY / innerHeight) - 0.5) * 10;
+            const rotateY = ((clientX / innerWidth) - 0.5) * -10;
+
+            title.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+         // Slow Scroll to info function
+        function slowScrollToInfo() {
+            const target = document.getElementById("info");
+            let scrollPosition = window.scrollY;
+            const targetPosition = target.offsetTop;
+            const distance = targetPosition - scrollPosition;
+            let startTime = null;
+            const duration = 1500; // Time in ms (1.5 seconds)
+
+            function scrollAnimation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, scrollPosition, distance, duration);
+                window.scrollTo(0, run);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(scrollAnimation);
+                }
+            }
+
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(scrollAnimation);
+            startContinuousScroll()
+        }
+        // Continuous scroll function
+        function startContinuousScroll() {
+            const scrollSpeed = 0.5; // Scroll speed in pixels per frame
+            let scrollDirection = 1; // 1 for down, -1 for up
+
+            function continuousScroll() {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    // If we've reached the bottom of the page, change direction
+                    scrollDirection = -1;
+                } else if (window.scrollY <= 0) {
+                    // If we're at the top of the page, scroll down
+                    scrollDirection = 1;
+                }
+
+                window.scrollBy(0, scrollSpeed * scrollDirection); // Scroll in the current direction
+                requestAnimationFrame(continuousScroll);
+            }
+
+            continuousScroll(); // Start continuous scrolling
+        }
+    </script>
+
+</body>
+</html>
